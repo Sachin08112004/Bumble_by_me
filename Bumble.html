@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bumble Landing</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #FFC629;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      height: 80px;
+      width: 90%;
+      margin: 20px auto;
+      border-radius: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: rgba(255, 255, 255, 0.75); /* translucent white */
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+    }
+
+    nav .logo {
+      height: 50px;
+    }
+
+    nav div {
+      display: flex;
+      gap: 25px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav div a {
+      text-decoration: none;
+      color: #444;
+      transition: color 0.3s ease;
+    }
+
+    nav div a:hover {
+      color: #ffaf00;
+    }
+
+    .Signin {
+      height: 42px;
+      width: 120px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #FFC629, #ffaf00);
+      color: black;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .Signin:hover {
+      background: black;
+      color: white;
+    }
+
+    /* Hero Section */
+    .head1 {
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .head1 img {
+      height: 220px;
+      filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.1));
+    }
+
+    /* Content Section */
+    .head2 {
+      min-height: 600px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 60px 10%;
+      background-color: white;
+      gap: 40px;
+      border-radius: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      margin-bottom: 50px;
+    }
+
+    .Text1 {
+      max-width: 450px;
+    }
+
+    .Text1 h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .Text1 p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .Text1 button {
+      height: 50px;
+      width: 220px;
+      border-radius: 30px;
+      background: black;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .Text1 button:hover {
+      background: linear-gradient(135deg, #FFC629, #ffaf00);
+      color: black;
+    }
+
+    /* Image Container */
+    .Text1-img {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .Text1-img img {
+      width: 180px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .Text1-img img:hover {
+      transform: translateY(-12px) scale(1.05);
+    }
+
+    /* Secondary Section */
+    .sec1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 80px 0;
+    }
+
+    .sec1 .head3 {
+      min-height: 600px;
+      max-width: 1300px;
+      display: flex;
+      align-items: center;
+      border-radius: 40px;
+      justify-content: center;
+      padding: 60px 8%;
+      background-color: #fdfdfd;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      gap: 60px;
+    }
+
+    .sec1 .Text2-img img {
+      width: 420px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .sec1 .Text2-img img:hover {
+      transform: translateY(-12px) scale(1.04);
+    }
+
+    .sec1 .Text2 {
+      max-width: 600px;
+    }
+
+    .sec1 .Text2 h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .sec1 .Text2 p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .Text2 button {
+      height: 50px;
+      width: 180px;
+      border-radius: 30px;
+      background: black;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .Text2 button:hover {
+      background: linear-gradient(135deg, #FFC629, #ffaf00);
+      color: black;
+    }
+
+    /* Feature Boxes Section */
+    .sec2, .sec4 {
+      width: 100%;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 40px;
+      background-color: white;
+      margin: 80px 0;
+      padding: 60px 5%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+
+    .box1, .box2 {
+      flex: 1;
+      max-width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #FFC629, #ffaf00);
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box1 img, .box2 img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .box1:hover, .box2:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .box1 h2, .box2 h2 {
+      margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .box1 p, .box2 p {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .box1 a, .box2 a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      border-bottom: 2px solid black;
+      padding-bottom: 3px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .box1 a:hover, .box2 a:hover {
+      color: white;
+      border-color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      padding: 40px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-radius: 30px 30px 0 0;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    }
+
+    footer .col {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer ul li a {
+      text-decoration: none;
+      color: #ddd;
+      transition: color 0.3s;
+    }
+
+    footer ul li a:hover {
+      color: #FFC629;
+    }
+
+    footer .copy {
+      text-align: center;
+      width: 100%;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    /* Help Button (Floating Action Button) */
+    .Help {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 100;
+    }
+
+    .Help img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+
+    .Help:hover {
+      transform: translateY(-6px) scale(1.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #FFC629, #ffaf00);
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <img class="logo" src="./bumble-logo-removebg-preview.png" alt="Logo">
+    <div>
+      <a href="">Date</a>
+      <a href="">Friends</a>
+      <a href="">Stories</a>
+      <a href="">Events</a>
+      <a href="">Safety</a>
+      <a href="">Support</a>
+    </div>
+    <button class="Signin">Sign in</button>
+  </nav>
+
+  <div class="head1">
+    <img src="./bumble-logo-removebg-preview.png" alt="Bumble">
+  </div>
+
+  <div class="head2">
+    <div class="Text1">
+      <h2>We exist to bring people closer to love.</h2>
+      <p>We want our members to find meaningful and authentic relationships that ignite confidence and joy.</p>
+      <button>Download Bumble</button>
+    </div>
+    <div class="Text1-img">
+      <img src="https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fcard1.jpg&w=2560&q=75" alt="">
+      <img src="https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fcard2.jpg&w=2560&q=75" alt="">
+      <img src="https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fcard3.jpg&w=2560&q=75" alt="">
+    </div>
+  </div>
+
+  <section class="sec1">
+    <div class="head3">
+      <div class="Text2-img"><img src="https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Flove-stories-1.jpg&w=2560&q=75" alt=""></div>
+      <div class="Text2">
+        <h1>Be the first to know</h1>
+        <p>Bumble has led to millions of relationships, marriages, and friendships around the world. Want to see what we’re building next? Sign up to get our latest updates and feature drops—straight to your inbox.</p>
+        <button>Sign up</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- First feature boxes -->
+  <section class="sec2">
+    <div class="box1">
+      <img src="https://www.datocms-assets.com/165226/1755692847-mainpage-card-1-desktop.jpg" alt="">
+      <h2>Bumble Date</h2>
+      <p>Bumble Date helps you make meaningful romantic connections — and yes, women make the first move in heterosexual matches.</p>
+      <a href="">Find your person</a>
+    </div>
+    <div class="box2">
+      <img src="https://www.datocms-assets.com/165226/1754921867-allstoriespage-card-5-desktop.jpg" alt="">
+      <h2>BFF</h2>
+      <p>Switch into BFF mode to meet new friends. Expand your circle with like-minded people looking for meaningful platonic connections.</p>
+      <a href="">Find your people</a>
+    </div>
+  </section>
+
+  <!-- Second feature boxes -->
+  <section class="sec1">
+    <div class="head3">
+      <div class="Text2">
+        <h1>Start the chat in person</h1>
+        <p>Bumble IRL events mean you can stop typing and start talking — come solo or bring a friend, and leave with new connections.</p>
+        <button>Meet in person</button>
+      </div>
+      <div class="Text2-img"><img src="https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=2560&q=75" alt=""></div>
+    </div>
+  </section>
+
+  <!-- Third feature boxes -->
+  <section class="sec4">
+    <div class="box1">
+      <img src="https://www.datocms-assets.com/165226/1754921764-allstoriespage-card-3-desktop.jpg" alt="">
+      <h2>Bumble Bizz</h2>
+      <p>Connect professionally with others. Bumble Bizz is for networking, mentorship, and career building.</p>
+      <a href="">Grow your network</a>
+    </div>
+    <div class="box2">
+      <img src="https://www.datocms-assets.com/165226/1754921523-mainpage-carousel-2.jpg" alt="">
+      <h2>Stories</h2>
+      <p>Read real user journeys — relationships, friendships, and networking wins. Get inspired by true stories behind the connections.</p>
+      <a href="">Read more stories</a>
+    </div>
+  </section>
+
+  <div class="Help">
+    <img src="./Help.png" alt="Help">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="col">
+      <h3>About</h3>
+      <ul>
+        <li><a href="">Our Story</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="">Blog</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="">Support</a></li>
+        <li><a href="">Safety Tips</a></li>
+        <li><a href="">Community Guidelines</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Twitter</a></li>
+        <li><a href="">Facebook</a></li>
+      </ul>
+    </div>
+    <div class="copy">
+      © 2025 Bumble. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
